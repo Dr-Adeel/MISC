@@ -21,7 +21,8 @@ Créez une classe Transaction. Le CompteCourant doit contenir une liste d'objets
 
 CompteCourant : Ajoute la méthode virement(destinataire, montant). Il enregistre chaque opération dans son historique.
 
-CompteEpargne : Ajoute un attribut taux_interet. Créez une méthode calculer_interets() qui applique la formule :$$Solde_{nouveau} = Solde_{actuel} + (Solde_{actuel} \times \frac{Taux}{100})$$
+CompteEpargne : Ajoute un attribut taux_interet. Créez une méthode calculer_interets() qui applique la formule :
+$$Solde_{nouveau} = Solde_{actuel} + (Solde_{actuel} \times \frac{Taux}{100})$$
 
 
 ### Étape 4 : Surcharge (Overloading)
