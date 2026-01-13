@@ -1,2 +1,0 @@
-# MISC
-Distribution des travaux
