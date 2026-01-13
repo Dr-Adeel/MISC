@@ -31,3 +31,6 @@ En Python, la surcharge se simule souvent avec des arguments par défaut. Modifi
 ## La Classe Client : Orchestration et Association
 
 La relation entre Client et Compte est une agrégation : si on supprime le client, les objets comptes pourraient techniquement exister (ou être transférés), mais le client "possède" une liste de références vers ces comptes.
+
+## Exemples d'utilisation
+Rédiger un script qui montre comment tous les concepts de POO (Héritage, Encapsulation, Polymorphisme et Association) fonctionnent ensemble
