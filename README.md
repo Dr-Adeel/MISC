@@ -40,3 +40,9 @@ The Orchestrator: PriceController Specification
 The PriceController follows the Mediator Pattern. It ensures that the Scraping team, the Math team, and the AI team can work independently.
 
 
+Data Engineers (EL JMILI	Hamza, EL KHELYFY	Imad, JADDI	Imad) : Implementing EbayProvider, AmazonProvider, and handling MarketUnreachableError.
+Data Scientists (AFFOUDJI	Akomédi Paterne, TAFOUGHALTI	Youssef, YOUNOUSSA SOUNA	Abdoul Wahab) : Building the MarketAnalyzer and statistical outlier logic.
+AI/Prompt Engineers (BOUKECHOUCH	Mohamed, EL YOUSFI	Ali, Elhaddouchi	Maryam) : Tuning the PricingAgent prompts and "Persona" logic.
+
+DevOps : Creating and Testing endpoints
+
