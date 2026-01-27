@@ -28,20 +28,27 @@ Module D: Explainability
 The modules, help decides the distinguishing features for a recommended price.
 
 Phase 1	Interface Design: 	Define the Abstract Base Classes (ABCs) to ensure the integrated code will be compatible.
+
 Phase 2	Data Acquisition:	Implement the specific scrapers or API wrappers (Ebay/Amazon mocks).
+
 Phase 3	AI Integration:	Use an LLM to interpret "messy" product titles and determine if they actually match the seller's item.
+
 Phase 4	The Orchestrator:	A PriceController class that runs the workflow from input to final report.
+
 Phase 5	Testing:	Starting from unit tests, each service class must respect the tests.
+
 Phase 6	Explainability:	Add explanations to gain confidence on the recommended price.
 
 Error Handling: Create custom Exception classes (e.g., MarketUnreachableError, InsufficientDataError) to handle the volatility of web data.
 
-The Orchestrator: PriceController Specification
+The Orchestrator: PriceController Specification. 
 The PriceController follows the Mediator Pattern. It ensures that the Scraping team, the Math team, and the AI team can work independently.
 
 
 Data Engineers (EL JMILI	Hamza, EL KHELYFY	Imad, JADDI	Imad) : Implementing EbayProvider, AmazonProvider, and handling MarketUnreachableError.
+
 Data Scientists (AFFOUDJI	Akomédi Paterne, TAFOUGHALTI	Youssef, YOUNOUSSA SOUNA	Abdoul Wahab) : Building the MarketAnalyzer and statistical outlier logic.
+
 AI/Prompt Engineers (BOUKECHOUCH	Mohamed, EL YOUSFI	Ali, Elhaddouchi	Maryam) : Tuning the PricingAgent prompts and "Persona" logic.
 
 DevOps : Creating and Testing endpoints
