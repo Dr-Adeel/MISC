@@ -24,6 +24,19 @@ Class MarketAnalyzer: Encapsulates the logic for calculating mean, median, and o
 Module C: The AI Pricing Agent (Composition)
 Class PricingAgent: This class has a (Composition) Connection to an LLM. It takes the summarized market data and a "Seller Persona" (e.g., "Aggressive Seller") to generate a natural language justification for the recommended price.
 
-Module D: Explainability
+Module D: Explainability 
+The modules, help decides the distinguishing features for a recommended price.
+
+Phase 1	Interface Design: 	Define the Abstract Base Classes (ABCs) to ensure the integrated code will be compatible.
+Phase 2	Data Acquisition:	Implement the specific scrapers or API wrappers (Ebay/Amazon mocks).
+Phase 3	AI Integration:	Use an LLM to interpret "messy" product titles and determine if they actually match the seller's item.
+Phase 4	The Orchestrator:	A PriceController class that runs the workflow from input to final report.
+Phase 5	Testing:	Starting from unit tests, each service class must respect the tests.
+Phase 6	Explainability:	Add explanations to gain confidence on the recommended price.
+
+Error Handling: Create custom Exception classes (e.g., MarketUnreachableError, InsufficientDataError) to handle the volatility of web data.
+
+The Orchestrator: PriceController Specification
+The PriceController follows the Mediator Pattern. It ensures that the Scraping team, the Math team, and the AI team can work independently.
 
 
