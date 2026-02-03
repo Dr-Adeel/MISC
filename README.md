@@ -55,5 +55,5 @@ The PriceController follows the Mediator Pattern. It ensures that the Scraping t
 
 #### AI/Prompt Engineers (BOUKECHOUCH	Mohamed, EL YOUSFI	Ali, Elhaddouchi	Maryam) : Tuning the PricingAgent prompts and "Persona" logic.
 
-#### DevOps (SALIM	Ayoub) : Creating and Testing endpoints
+#### DevOps (SALIM	Ayoub, SENHAJI	Tarik) : Creating and Testing endpoints
 
