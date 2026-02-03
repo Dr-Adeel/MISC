@@ -51,9 +51,36 @@ The PriceController follows the Mediator Pattern. It ensures that the Scraping t
 
 #### Data Engineers (EL JMILI	Hamza, EL KHELYFY	Imad, JADDI	Imad) : Implementing EbayProvider, AmazonProvider, and handling MarketUnreachableError.
 
+JADDI	Imad (Architect): Define the MarketProvider Abstract Base Class (ABC) and implement the Provider Factory to dynamically load sources.
+
+DEL KHELYFY	Imad (Meta-Data specialist): Implement the EbayProvider and AmazonProvider subclasses, focusing on Data Formats and selector management.
+
+EL JMILI	Hamza (Resilience): Implement proxy rotation, user-agent switching, and the custom MarketUnreachableError and Exception handling.
+
 #### Data Scientists (AFFOUDJI	Akomédi Paterne, TAFOUGHALTI	Youssef, YOUNOUSSA SOUNA	Abdoul Wahab) : Building the MarketAnalyzer and statistical outlier logic.
+AFFOUDJI	Akomédi Paterne (Data Modeler): Design the PricePoint DTO and the internal data structure for storing listings to ensure type safety.
+
+TAFOUGHALTI	Youssef / YOUNOUSSA SOUNA	Abdoul Wahab : Build the MarketAnalyzer logic, specifically methods for:
+
+Outlier Detection: Implementing IQR (Interquartile Range) to filter out "noise."
+
+Aggregation: Calculating mean, median, and mode for different product conditions.
 
 #### AI/Prompt Engineers (BOUKECHOUCH	Mohamed, EL YOUSFI	Ali, Elhaddouchi	Maryam) : Tuning the PricingAgent prompts and "Persona" logic.
 
+BOUKECHOUCH	Mohamed (Prompt Engineer): Compose the core engine and interpret data according to business goals.
+
+Design and test the Seller Persona system (Maximize sales, Maximize Profit, Optimizer) and ensure the LLM returns consistent JSON.
+
+Elhaddouchi	Maryam (Integration): Set up the LLM client, manage API keys, and implement the Semantic Filtering logic (checking if a listing title actually matches the searched product).
+
 #### DevOps (SALIM	Ayoub, SENHAJI	Tarik) : Creating and Testing endpoints
+
+The Orchestrator and Deployment ensures all parts talk to each other and the outside world.
+
+SENHAJI	Tarik (Lead Backend and API Engineer): Build the PriceController (The Orchestrator) using the Mediator pattern to connect Teams 1, 2, and 3.
+
+Develop the FastAPI endpoints, request validation (Pydantic), and async task handling.
+
+SALIM	Ayoub (DevOps/Reporting): Containerize the app with Docker, set up environment variables, and implement the Health Report Generator.
 
