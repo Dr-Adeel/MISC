@@ -84,3 +84,22 @@ Develop the FastAPI endpoints, request validation (Pydantic), and async task han
 
 SALIM	Ayoub (DevOps/Reporting): Containerize the app with Docker, set up environment variables, and implement the Health Report Generator.
 
+#### Quality Engineer QE (MOURAD Salma) : Data Quality Assurance (DQA)
+
+Focus on three "North Star" metrics: Accuracy (is the price right?), Resilience (does the scraper break?), and Trust (is the AI justification logical?).
+Contract Testing (Microservices): * Ensure that the PricePoint DTO from the Data Science team perfectly matches what the AI Agent expects, using Pact or Pytest-spec, etc.
+
+Verify that the scrapers aren't pulling "dirty" data (e.g., ensuring a "Sony Headphones" search doesn't return "Headphone Cable" prices).
+
+Set up automated checks for "Data Drift" (e.g., if Amazon changes its layout, the QE lead is the first to know via automated health checks).
+
+LLM "Red Teaming":
+
+Testing the Pricing Agent with edge cases. What happens if the median price is $0? What if the seller asks for an "Impossible Profit"?
+
+Ensuring the AI Personas stay within their defined boundaries and don't "hallucinate" prices.
+
+Performance & Load Testing:
+
+Simulate 100 simultaneous price requests to ensure the FastAPI orchestrator and the Scraping Factory don't crash under pressure, using Locust or K6, etc.
+
