@@ -84,7 +84,7 @@ Develop the FastAPI endpoints, request validation (Pydantic), and async task han
 
 SALIM	Ayoub (DevOps/Reporting): Containerize the app with Docker, set up environment variables, and implement the Health Report Generator.
 
-#### Quality Engineer QE (MOURAD Salma) : Data Quality Assurance (DQA)
+#### Quality Engineer QE (MOURAD Salma, Allali Chaimaa) : Data Quality Assurance (DQA)
 
 Focus on three "North Star" metrics: Accuracy (is the price right?), Resilience (does the scraper break?), and Trust (is the AI justification logical?).
 Contract Testing (Microservices): * Ensure that the PricePoint DTO from the Data Science team perfectly matches what the AI Agent expects, using Pact or Pytest-spec, etc.
