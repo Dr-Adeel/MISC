@@ -103,3 +103,11 @@ Performance & Load Testing:
 
 Simulate 100 simultaneous price requests to ensure the FastAPI orchestrator and the Scraping Factory don't crash under pressure, using Locust or K6, etc.
 
+#### Technical Architect & Integration Lead (EL BAZE Oussama) : System Interoperability (Design Patterns) and Cross-Team Alignment.
+Shared Interface Management: e.g. If the Scraper team needs to change how fetch_listings works, the Architect ensures that the Analytical Engine team is prepared for that change.
+
+Cross-Module Dependency Management: Ensuring that the PricingAgent (AI) doesn't become "tightly coupled" with a specific Scraper. They enforce the Dependency Inversion Principle.
+
+Documentation of Design Decisions: Maintaining the ADRs (Architecture Decision Records). e.g. If the team decides to use WebSockets instead of REST for real-time updates, the Architect documents the "Why."
+
+The "Glue" Code: They work closely with the Orchestrator developer to ensure the logic flow from input to output is optimized and doesn't leak memory.
