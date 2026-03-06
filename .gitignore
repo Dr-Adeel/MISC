@@ -1,0 +1,40 @@
+# ── Python ──
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ── Environment ──
+.env
+.conda/
+
+# ── Models (large binary files) ──
+models/*.pkl
+
+# ── Data ──
+*.xlsb
+*.xlsx
+*.xls
+
+# ── IDE / Editor ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── OS ──
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Jupyter ──
+.ipynb_checkpoints/
+
+# ── Misc ──
+*.log
+*.tmp
