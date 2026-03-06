@@ -324,7 +324,7 @@ MIT License
 
 ## 🙏 Acknowledgments
 
-- **Dataset:** Amazon Product Dataset (Kaggle) — 50,444 products
+- **Dataset:** Amazon Product Dataset — 50,444 products
 - **LLM:** Google Gemini API (`gemini-2.0-flash`)
 - **ML:** scikit-learn GradientBoostingRegressor
 
