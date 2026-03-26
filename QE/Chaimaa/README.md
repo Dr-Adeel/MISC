@@ -1,4 +1,4 @@
-# Quality Testing Report — PricePulse AI Engine
+# Quality Testing Report: PricePulse AI Engine
 
 **Author:** QA Engineer Chaimaa ALLALI  
 **Scope:** Functional and logic validation of the AI pricing engine and its semantic reasoning layer  
