@@ -15,15 +15,20 @@ The goal of this testing session is to validate the reliability, resilience, and
 -Semantic filter correctness (main product vs. accessory detection)
 
 
-🧩3. Test Environment
+🧩## 3. Test Environment
 
+- **Module under test:**  
+  `agents/pricing_agent.py`
 
--Module under test: agents/pricing_agent.py
--Mocked dependencies:
-      --google.genai (Gemini API) mocked to remove external API dependency
-      --predict_price replaced with a fake ML predictor returning dummy values
--Language: Python 3.12
--Framework: Pytest
+- **Mocked dependencies:**
+  - `google.genai` (Gemini API) mocked to remove external API dependency  
+  - `predict_price` replaced with a fake ML predictor returning dummy values  
+
+- **Language:** Python 3.12  
+- **Framework:** Pytest  
+
+---
+
 
 
 ## 4. Test Scenarios Overview
@@ -42,11 +47,15 @@ The goal of this testing session is to validate the reliability, resilience, and
 | Empty / Gibberish Input | Handle meaningless input | Returns structured response |
 | Invalid Category | Handle unknown categories | Returns non-null output |
 | Price Range Logic | Ensure consistency | min ≤ price ≤ max |
-⚠️ 5.Observation Summary
-Test	                                  |Status	         |Issue Description
-test_false_accessory_detection	        |❌ Failed	     |AI misclassified “iPhone 13 with case included” as accessory
-test_main_product_with_accessory_words	|❌ Failed	     |“Samsung Galaxy phone with charger” incorrectly tagged as accessory
-All other tests	                        |✅ Passed	     |Functionality and structure validated successfully
+## 5. Observation Summary
+
+| Test | Status | Issue Description |
+|------|--------|------------------|
+| test_false_accessory_detection | ❌ Failed | "iPhone 13 with case included" misclassified as accessory |
+| test_main_product_with_accessory_words | ❌ Failed | "Samsung Galaxy phone with charger" misclassified |
+| All other tests | ✅ Passed | Functionality and structure validated |
+
+---
 
 🔍 6.Analysis of Failures
 Both failures occur within the semantic filter module, which determines whether a product is a main item or an accessory.
@@ -57,10 +66,15 @@ Both failures occur within the semantic filter module, which determines whether 
          -Add contextual logic to distinguish “contains accessory” vs. “is accessory.”
          -Introduce confidence-based thresholding (reduce false positives).
          -Expand training or fine-tuned patterns for compound product titles.
-🧾 7.Conclusion
- The AI pricing engine performs consistently across core logic tests and shows strong fault tolerance for invalid inputs (empty, gibberish, extreme values).
-However, two semantic misclassifications reveal a need for improved natural language understanding in accessory detection.
-Once fine-tuned, the system will achieve full reliability in differentiating between main devices and included accessories, which is crucial for accurate pricing and seller trust.
+🧾 ## 7. Conclusion
+
+The AI pricing engine performs consistently across core tests and handles difficult inputs such as empty or random data.
+
+However, semantic misclassification shows a limitation in how the system interprets product descriptions.
+
+Improving this will increase pricing accuracy and system reliability.
+
+---
 
 Overall Quality Verdict:
 ✅ Robust ML fallback and persona logic
