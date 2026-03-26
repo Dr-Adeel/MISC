@@ -96,5 +96,7 @@ Improving this will increase pricing accuracy and system reliability.
 ---
 
 ## Overall Quality Verdict
-✅ Robust ML fallback and persona logic
-⚙️ Minor semantic refinement needed for contextual filtering
+
+The system works well in fallback mode and handles persona logic correctly.
+
+However, the semantic filtering still needs improvement, especially when understanding product descriptions.
