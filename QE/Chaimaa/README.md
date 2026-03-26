@@ -15,7 +15,7 @@ The goal of this testing session is to validate the reliability, resilience, and
 -Semantic filter correctness (main product vs. accessory detection)
 
 
-🧩## 3. Test Environment
+🧩 ## 3. Test Environment
 
 - **Module under test:**  
   `agents/pricing_agent.py`
