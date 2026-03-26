@@ -1,21 +1,24 @@
-🧪 1.Quality Testing Report — PricePulse AI Engine
+# Quality Testing Report — PricePulse AI Engine
 
+**Author:** QA Engineer  
+**Scope:** Functional and logic validation of the AI pricing engine and its semantic reasoning layer  
 
-Author: QA Engineer
-Scope: Functional & logic validation of the AI pricing engine and its semantic reasoning layer
+---
 
-🎯2. Objective
+## 1. Objective
 
+The goal of this testing session is to validate the reliability, resilience, and logical accuracy of PricePulse’s AI-powered pricing system.
 
-The goal of this testing session is to validate the reliability, resilience, and logical accuracy of PricePulse’s AI-powered pricing system, focusing on:
+The focus is on:
 
--ML fallback behavior (when LLM is unavailable)
--Persona-dependent price variation
--Input validation (empty, invalid, extreme, or nonsensical data)
--Semantic filter correctness (main product vs. accessory detection)
+- ML fallback behavior (when LLM is unavailable)  
+- Persona-dependent price variation  
+- Input validation (empty, invalid, extreme, or nonsensical data)  
+- Semantic filter correctness (main product vs accessory detection)  
 
+---
 
-🧩 ## 3. Test Environment
+## 3. Test Environment
 
 - **Module under test:**  
   `agents/pricing_agent.py`
