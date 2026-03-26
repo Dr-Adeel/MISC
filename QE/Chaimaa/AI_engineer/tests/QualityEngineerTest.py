@@ -2,10 +2,11 @@ import sys
 import os
 import types
 
-# ✅ Fix import path (so "config", "agents", etc. work)
+# Fix import path (so "config", "agents", etc. work)
+#this part took the longest to fix cs either this or install a bunch of stuff that will cause issues later
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-# ✅ Mock google.genai (to avoid Gemini dependency)
+# Mock google.genai (to avoid Gemini dependency)
 google_module = types.ModuleType("google")
 genai_module = types.ModuleType("genai")
 types_module = types.ModuleType("types")
@@ -37,9 +38,9 @@ sys.modules["predict_price"].predict_price = fake_predict_price
 from agents.pricing_agent import PricingAgent
 
 
-# ================================
-# TESTS
-# ================================
+
+# NOW TESTS
+
 
 def test_ai_output_structure():
     agent = PricingAgent()
