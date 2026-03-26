@@ -1,4 +1,4 @@
-from market_analyzer import MarketAnalyzer
+from QE.Chaimaa.data_scientist.market_analyzer import MarketAnalyzer
 import pandas as pd
 # fake product
 class FakeProduct:
