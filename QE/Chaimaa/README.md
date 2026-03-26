@@ -1,30 +1,43 @@
 🧪 1.Quality Testing Report — PricePulse AI Engine
+
+
 Author: QA Engineer
 Scope: Functional & logic validation of the AI pricing engine and its semantic reasoning layer
 
 🎯2. Objective
+
+
 The goal of this testing session is to validate the reliability, resilience, and logical accuracy of PricePulse’s AI-powered pricing system, focusing on:
 
 -ML fallback behavior (when LLM is unavailable)
 -Persona-dependent price variation
 -Input validation (empty, invalid, extreme, or nonsensical data)
 -Semantic filter correctness (main product vs. accessory detection)
+
+
 🧩3. Test Environment
+
+
 -Module under test: agents/pricing_agent.py
 -Mocked dependencies:
       --google.genai (Gemini API) mocked to remove external API dependency
       --predict_price replaced with a fake ML predictor returning dummy values
 -Language: Python 3.12
 -Framework: Pytest
+
+
 🧠 4.Test Scenarios Overview
-|Category	                         |          Purpose	                                                              |Expected Behavior
-|AI Output Structure               |	Validate existence of all key fields (price, range, confidence, reasoning)	  |Response dictionary contains all required keys
-|Positive Price Guard              |	Ensure no negative or zero price values                                       |	All predicted prices > 0
-|Extreme Value Handling            |	Avoid unrealistic prices due to faulty ML outputs                             |	AI limits prices within safe bounds
-|Persona Sensitivity	             |Verify different seller personas change suggested price appropriately	          | Sales Maximizer ≠ Profit Maximizer results
-|Fallback Behavior	               |Check ML-only mode when LLM unavailable	                                        | _source field marked as ml_fallback
-|Accessory Detection               |	Identify items like “iPhone case” as accessories	                            | Match type set to accessory
-|False Accessory Detection         |	Ensure “iPhone 13 with case included” is not misclassified	                  | Match type ≠ accessory (✅ expected)
+
+
+
+|Category	            |          Purpose	                                  |Expected Behavior
+|AI Output Structure    |Validate existence of all key fields (price, range..)     |Response dictionary contains all required keys
+|Positive Price Guard   |ensure no negative or zero price values                   |	All predicted prices > 0
+|Extreme Value Handling |Avoid unrealistic prices due to faulty ML outputs         |	AI limits prices within safe bounds
+|Persona Sensitivity	|Verify different seller personas change suggested price   | Sales Maximizer ≠ Profit Maximizer results
+|Fallback Behavior	|Check ML-only mode when LLM unavailable                   | _source field marked as ml_fallback
+|Accessory Detection    |Identify items like “iPhone case” as accessories          | Match type set to accessory
+|False Accessory Detection |	Ensure “iPhone 13 with case included” is not misclassified | Match type ≠ accessory (✅ expected)
 |Main Product with Accessory Words |	Avoid misclassification when accessory word appears alongside a main product	| Match type ≠ accessory (❌ failed)
 |Invalid Persona	                 | raceful error on unknown persona	                                              | Raises KeyError
 |Empty or Gibberish Input	         | Handle meaningless or blank titles safely	                                    | Returns structured response with low confidence
