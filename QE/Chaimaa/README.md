@@ -1,6 +1,6 @@
 # Quality Testing Report — PricePulse AI Engine
 
-**Author:** QA Engineer  
+**Author:** QA Engineer Chaimaa ALLALI  
 **Scope:** Functional and logic validation of the AI pricing engine and its semantic reasoning layer  
 
 ---
@@ -60,16 +60,32 @@ The focus is on:
 
 ---
 
-🔍 6.Analysis of Failures
-Both failures occur within the semantic filter module, which determines whether a product is a main item or an accessory.
+## 6. Analysis of Failures
 
-=>Root cause: The filter likely relies on simple keyword matching (e.g., "case", "charger") without context weighting.
-=>Effect: Phrases that contain accessory words even alongside a valid product (e.g., "phone with charger") are flagged as accessories.
-=>Suggested improvement:
-         -Add contextual logic to distinguish “contains accessory” vs. “is accessory.”
-         -Introduce confidence-based thresholding (reduce false positives).
-         -Expand training or fine-tuned patterns for compound product titles.
-🧾 ## 7. Conclusion
+Both failures occur in the semantic filter module, which decides if a product is a main item or an accessory.
+
+**Root cause**
+
+The system relies on simple keyword matching: If one of these appears, the product is classified as an accessory.
+
+---
+
+**Effect**
+
+This leads to incorrect classification when a product includes an accessory.
+
+Example:
+---
+
+**Suggested improvements**
+
+- Add logic to distinguish "contains accessory" vs "is accessory"  
+- Introduce confidence-based decisions  
+- Improve handling of complex product titles  
+
+---
+
+## 7. Conclusion
 
 The AI pricing engine performs consistently across core tests and handles difficult inputs such as empty or random data.
 
@@ -79,6 +95,6 @@ Improving this will increase pricing accuracy and system reliability.
 
 ---
 
-Overall Quality Verdict:
+## Overall Quality Verdict
 ✅ Robust ML fallback and persona logic
 ⚙️ Minor semantic refinement needed for contextual filtering
