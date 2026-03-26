@@ -26,23 +26,22 @@ The goal of this testing session is to validate the reliability, resilience, and
 -Framework: Pytest
 
 
-🧠 4.Test Scenarios Overview
+## 4. Test Scenarios Overview
 
-
-
-|Category	            |          Purpose	                                  |Expected Behavior
-|AI Output Structure    |Validate existence of all key fields (price, range..)     |Response dictionary contains all required keys
-|Positive Price Guard   |ensure no negative or zero price values                   |	All predicted prices > 0
-|Extreme Value Handling |Avoid unrealistic prices due to faulty ML outputs         |	AI limits prices within safe bounds
-|Persona Sensitivity	|Verify different seller personas change suggested price   | Sales Maximizer ≠ Profit Maximizer results
-|Fallback Behavior	|Check ML-only mode when LLM unavailable                   | _source field marked as ml_fallback
-|Accessory Detection    |Identify items like “iPhone case” as accessories          | Match type set to accessory
-|False Accessory Detection |	Ensure “iPhone 13 with case included” is not misclassified | Match type ≠ accessory (✅ expected)
-|Main Product with Accessory Words |	Avoid misclassification when accessory word appears alongside a main product	| Match type ≠ accessory (❌ failed)
-|Invalid Persona	                 | raceful error on unknown persona	                                              | Raises KeyError
-|Empty or Gibberish Input	         | Handle meaningless or blank titles safely	                                    | Returns structured response with low confidence
-|Invalid Category	                 | Resilient to unknown categories	                                              | Returns non-null output
-|Price Range Logic	               | Ensure suggested price falls within range bounds	                              | min ≤ price ≤ max
+| Category | Purpose | Expected Behavior |
+|----------|--------|------------------|
+| AI Output Structure | Validate existence of all key fields (price, range, confidence, reasoning) | Response contains all required keys |
+| Positive Price Guard | Ensure no negative or zero price values | All predicted prices > 0 |
+| Extreme Value Handling | Avoid unrealistic prices due to faulty ML outputs | Price stays within safe bounds |
+| Persona Sensitivity | Verify personas affect pricing | Sales ≠ Profit results |
+| Fallback Behavior | Check ML-only mode | `_source = ml_fallback` |
+| Accessory Detection | Detect accessories | match_type = accessory |
+| False Accessory Detection | Avoid misclassification | match_type ≠ accessory |
+| Main Product with Accessory Words | Avoid wrong classification with mixed titles | match_type ≠ accessory |
+| Invalid Persona | Handle unknown persona | Raises KeyError |
+| Empty / Gibberish Input | Handle meaningless input | Returns structured response |
+| Invalid Category | Handle unknown categories | Returns non-null output |
+| Price Range Logic | Ensure consistency | min ≤ price ≤ max |
 ⚠️ 5.Observation Summary
 Test	                                  |Status	         |Issue Description
 test_false_accessory_detection	        |❌ Failed	     |AI misclassified “iPhone 13 with case included” as accessory
