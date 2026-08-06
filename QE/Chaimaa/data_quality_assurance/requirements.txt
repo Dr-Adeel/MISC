@@ -1,0 +1,19 @@
+# Analyse de données
+pandas>=1.3.0
+numpy>=1.21.0
+
+# Visualisation
+matplotlib>=3.4.0
+seaborn>=0.11.0
+
+# Jupyter
+jupyter>=1.0.0
+ipykernel>=6.0.0
+notebook>=6.4.0
+
+# Génération de PDF
+reportlab>=3.6.0
+
+# Tests
+pytest>=7.0.0
+pytest-cov>=3.0.0
